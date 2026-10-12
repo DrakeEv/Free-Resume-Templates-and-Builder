@@ -1,0 +1,391 @@
+<!doctype html>
+<!--
+  Student Resume Templates
+  This site was created with the help of AI (Claude, by Anthropic) and reviewed by Career Services.
+  See README.md for the full AI disclosure.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Student Resume Templates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+/* Layout: navy masthead with red rule → builder (controls left, live paper preview right; stacks on phones) → checklist. Single committed red/white/blue light look. */
+:root{
+  --navy:#14284b; --red:#c8102e; --red-dark:#a30d25;
+  --white:#ffffff; --paper:#f1f4f9; --ink:#18202e; --muted:#566178; --line:#d6dce8;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  color-scheme:light;
+}
+html,body{background:var(--white);color:var(--ink)}
+body{font-family:var(--body);font-size:17px;line-height:1.5}
+.gutter{padding-inline:16px}
+.inner{max-width:1100px;margin:0 auto}
+.mast{background:var(--navy);color:var(--white);border-bottom:6px solid var(--red);padding-block:28px}
+.mast .inner{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#ffd0d6;margin:0 0 6px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.02;margin:0 0 12px;text-wrap:balance;letter-spacing:-.01em}
+.lede{margin:0;max-width:34em;color:#dbe3f2}
+.intro{flex:1 1 380px;min-width:0}
+.qr{flex:0 0 auto;display:flex;gap:16px;align-items:center;background:var(--white);color:var(--ink);border-radius:8px;padding:14px 18px 14px 14px;box-shadow:0 0 0 4px var(--red)}
+.qr svg{width:132px;height:132px;display:block}
+.qr strong{font-family:var(--display);display:block;font-size:18px;color:var(--navy);line-height:1.15;margin-bottom:4px}
+.qr span{font-size:14px;color:var(--muted);display:block;max-width:12em}
+
+main{padding-block:32px 20px}
+h2{font-family:var(--display);font-weight:800;font-size:1.6rem;color:var(--navy);margin:0;text-wrap:balance}
+.builder{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:820px){.builder{grid-template-columns:minmax(0,1fr)}}
+.controls{display:flex;flex-direction:column;gap:22px;min-width:0}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font-family:var(--display);font-weight:700;font-size:15px;color:var(--navy);padding:0;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+legend b{display:inline grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:var(--white);font-size:12px}
+.opts{display:grid;gap:8px}
+.tpls{grid-template-columns:1fr 1fr}
+.tpls .opt:last-child:nth-child(odd){grid-column:1/-1}
+.looks{grid-template-columns:repeat(3,1fr)}
+.opt{font:inherit;text-align:left;background:var(--white);color:var(--ink);border:1.5px solid var(--line);border-radius:6px;padding:10px;cursor:pointer;display:flex;flex-direction:column;gap:2px;min-width:0}
+.opt:hover{border-color:var(--navy)}
+.opt[aria-pressed="true"]{border-color:var(--navy);box-shadow:inset 0 0 0 1.5px var(--navy);background:#f6f8fc}
+.opt:focus-visible,.sw:focus-visible,.btn:focus-visible,.custom input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.opt .t{font-family:var(--display);font-weight:700;color:var(--navy);font-size:15px;line-height:1.2}
+.opt .d{font-size:13px;color:var(--muted);line-height:1.3}
+.tag{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.swatches{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.sw{width:38px;height:38px;border-radius:50%;border:3px solid var(--white);box-shadow:0 0 0 1.5px var(--line);cursor:pointer;padding:0}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2.5px var(--navy)}
+.custom{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)}
+.custom input{width:44px;height:38px;border:1.5px solid var(--line);border-radius:6px;padding:2px;background:var(--white);cursor:pointer}
+.colorname{font-size:14px;color:var(--muted);margin:8px 0 0;min-height:1.4em}
+.warn{color:var(--red-dark)}
+.btn{font:700 17px var(--body);color:var(--white);background:var(--red);border:0;border-radius:5px;padding:14px 16px;cursor:pointer;width:100%}
+.btn:hover{background:var(--red-dark)}
+.btn[disabled]{opacity:.65;cursor:progress}
+a.btn{display:block;text-align:center;text-decoration:none}
+.status{font-size:14px;color:var(--muted);min-height:1.4em;margin:6px 0 0}
+.ats{font-size:14px;color:var(--muted);background:var(--paper);border-radius:5px;padding:10px 12px;margin:0}
+.ats strong{color:var(--navy)}
+
+.stage{background:var(--paper);border-radius:8px;padding:clamp(14px,3vw,32px);position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);min-width:0}
+.sheet{background:#fff;box-shadow:0 1px 2px rgba(20,40,75,.12),0 14px 34px rgba(20,40,75,.16);max-width:560px;margin:0 auto}
+.sheet canvas{display:block;width:100%;aspect-ratio:8.5/11;height:auto}
+.caption{text-align:center;font-size:13px;color:var(--muted);margin:10px 0 0}
+@media (max-width:820px){.stage{position:static}}
+
+.howto{margin-top:48px}
+.howto-lede{margin:6px 0 28px;color:var(--muted);max-width:60ch}
+.howto-required{margin:12px 0 0;background:#fdecee;border-left:5px solid var(--red);border-radius:4px;padding:10px 14px;max-width:70ch;color:var(--ink)}
+.howto-required b{color:var(--red-dark)}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.step{position:relative;display:flex;flex-direction:column;gap:10px;background:var(--white);border:1.5px solid var(--line);border-top:5px solid var(--navy);border-radius:6px;padding:18px 16px 16px;min-width:0}
+.step:not(:last-child)::after{content:"";position:absolute;top:50%;right:-23px;width:18px;height:18px;transform:translateY(-50%);
+  background:var(--red);clip-path:polygon(0 25%,55% 25%,55% 0,100% 50%,55% 100%,55% 75%,0 75%)}
+.num{position:absolute;top:-17px;left:14px;width:30px;height:30px;border-radius:50%;background:var(--red);color:var(--white);display:grid;place-items:center;font:800 15px var(--display);box-shadow:0 0 0 3px var(--white)}
+.step h3{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--navy);margin:4px 0 0;line-height:1.2}
+.step p{margin:0;font-size:15px;color:var(--muted)}
+.step p b{color:var(--ink)}
+.mock{background:var(--paper);border-radius:5px;padding:12px;min-height:96px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:8px;font-size:13px}
+.m-btn{background:var(--red);color:#fff;font-weight:700;border-radius:4px;padding:6px 10px}
+.m-file{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:5px 8px;color:var(--ink);max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.m-file i{flex:none;width:12px;height:15px;background:var(--red);clip-path:polygon(0 0,70% 0,100% 25%,100% 100%,0 100%)}
+.m-new{background:#fff;border:1px solid var(--line);border-radius:14px;padding:5px 12px;font-weight:700;color:var(--navy);box-shadow:0 1px 3px rgba(20,40,75,.15)}
+.m-menu{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:4px;padding:3px 0;box-shadow:0 2px 6px rgba(20,40,75,.12);min-width:110px}
+.m-menu span{padding:3px 10px;color:var(--muted)}
+.m-menu .hi{background:#e3e9f4;color:var(--navy);font-weight:700}
+.m-menu.sub{margin-left:40px}
+.m-doc{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:4px;padding:6px 10px;gap:2px}
+.m-doc .old{text-decoration:line-through;color:var(--muted)}
+.m-doc .new{color:var(--navy);font-weight:700}
+.m-path{color:var(--muted)}
+.m-path b{color:var(--red)}
+.howto-note{margin:18px 0 0;font-size:15px;color:var(--muted);max-width:70ch}
+.howto-note b{color:var(--navy)}
+@media (max-width:900px){.flow{grid-template-columns:repeat(2,minmax(0,1fr))}.step:nth-child(2)::after{display:none}}
+@media (max-width:560px){.flow{grid-template-columns:minmax(0,1fr)}
+  .step:not(:last-child)::after{display:block;top:auto;bottom:-23px;right:50%;transform:translateX(50%) rotate(90deg)}}
+.tips{margin-top:40px;background:var(--paper);border-left:6px solid var(--navy);border-radius:4px;padding:20px 22px}
+.tips h2{font-size:1.3rem}
+.tips ol{margin:8px 0 0;padding-left:1.3em;display:grid;gap:6px;max-width:62ch}
+.tips li::marker{color:var(--red);font-family:var(--display);font-weight:800}
+footer{padding-block:20px 32px;color:var(--muted);font-size:14px}
+footer .inner{border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:560px){.qr svg{width:104px;height:104px}.qr{padding:10px 14px 10px 10px}.looks{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="mast gutter">
+  <div class="inner">
+    <div class="intro">
+      <p class="eyebrow">Career Services</p>
+      <h1>Student Resume Templates</h1>
+      <p class="lede">Choose a template, pick a look and a color, then download your PDF. Every version fits on one page and is built to pass applicant tracking systems.</p>
+    </div>
+    <div class="qr" aria-label="QR code for this page">
+      <svg viewBox="-1 -1 35 35" role="img" aria-label="QR code linking to https://claude.ai/artifact/WDz1vAJzoBru6FKsjUi86V" shape-rendering="crispEdges"><rect x="-1" y="-1" width="35" height="35" fill="#ffffff"/><path d="M0,0h1v1h-1zM1,0h1v1h-1zM2,0h1v1h-1zM3,0h1v1h-1zM4,0h1v1h-1zM5,0h1v1h-1zM6,0h1v1h-1zM10,0h1v1h-1zM14,0h1v1h-1zM16,0h1v1h-1zM18,0h1v1h-1zM19,0h1v1h-1zM20,0h1v1h-1zM21,0h1v1h-1zM23,0h1v1h-1zM26,0h1v1h-1zM27,0h1v1h-1zM28,0h1v1h-1zM29,0h1v1h-1zM30,0h1v1h-1zM31,0h1v1h-1zM32,0h1v1h-1zM0,1h1v1h-1zM6,1h1v1h-1zM10,1h1v1h-1zM11,1h1v1h-1zM15,1h1v1h-1zM18,1h1v1h-1zM21,1h1v1h-1zM22,1h1v1h-1zM24,1h1v1h-1zM26,1h1v1h-1zM32,1h1v1h-1zM0,2h1v1h-1zM2,2h1v1h-1zM3,2h1v1h-1zM4,2h1v1h-1zM6,2h1v1h-1zM8,2h1v1h-1zM10,2h1v1h-1zM12,2h1v1h-1zM14,2h1v1h-1zM15,2h1v1h-1zM16,2h1v1h-1zM20,2h1v1h-1zM21,2h1v1h-1zM22,2h1v1h-1zM26,2h1v1h-1zM28,2h1v1h-1zM29,2h1v1h-1zM30,2h1v1h-1zM32,2h1v1h-1zM0,3h1v1h-1zM2,3h1v1h-1zM3,3h1v1h-1zM4,3h1v1h-1zM6,3h1v1h-1zM8,3h1v1h-1zM9,3h1v1h-1zM12,3h1v1h-1zM15,3h1v1h-1zM18,3h1v1h-1zM22,3h1v1h-1zM26,3h1v1h-1zM28,3h1v1h-1zM29,3h1v1h-1zM30,3h1v1h-1zM32,3h1v1h-1zM0,4h1v1h-1zM2,4h1v1h-1zM3,4h1v1h-1zM4,4h1v1h-1zM6,4h1v1h-1zM8,4h1v1h-1zM9,4h1v1h-1zM13,4h1v1h-1zM14,4h1v1h-1zM15,4h1v1h-1zM16,4h1v1h-1zM17,4h1v1h-1zM20,4h1v1h-1zM21,4h1v1h-1zM26,4h1v1h-1zM28,4h1v1h-1zM29,4h1v1h-1zM30,4h1v1h-1zM32,4h1v1h-1zM0,5h1v1h-1zM6,5h1v1h-1zM8,5h1v1h-1zM9,5h1v1h-1zM10,5h1v1h-1zM12,5h1v1h-1zM13,5h1v1h-1zM18,5h1v1h-1zM19,5h1v1h-1zM21,5h1v1h-1zM22,5h1v1h-1zM24,5h1v1h-1zM26,5h1v1h-1zM32,5h1v1h-1zM0,6h1v1h-1zM1,6h1v1h-1zM2,6h1v1h-1zM3,6h1v1h-1zM4,6h1v1h-1zM5,6h1v1h-1zM6,6h1v1h-1zM8,6h1v1h-1zM10,6h1v1h-1zM12,6h1v1h-1zM14,6h1v1h-1zM16,6h1v1h-1zM18,6h1v1h-1zM20,6h1v1h-1zM22,6h1v1h-1zM24,6h1v1h-1zM26,6h1v1h-1zM27,6h1v1h-1zM28,6h1v1h-1zM29,6h1v1h-1zM30,6h1v1h-1zM31,6h1v1h-1zM32,6h1v1h-1zM8,7h1v1h-1zM12,7h1v1h-1zM16,7h1v1h-1zM19,7h1v1h-1zM20,7h1v1h-1zM21,7h1v1h-1zM22,7h1v1h-1zM23,7h1v1h-1zM24,7h1v1h-1zM0,8h1v1h-1zM2,8h1v1h-1zM3,8h1v1h-1zM4,8h1v1h-1zM5,8h1v1h-1zM6,8h1v1h-1zM9,8h1v1h-1zM10,8h1v1h-1zM12,8h1v1h-1zM13,8h1v1h-1zM17,8h1v1h-1zM19,8h1v1h-1zM20,8h1v1h-1zM23,8h1v1h-1zM24,8h1v1h-1zM26,8h1v1h-1zM27,8h1v1h-1zM28,8h1v1h-1zM29,8h1v1h-1zM30,8h1v1h-1zM1,9h1v1h-1zM3,9h1v1h-1zM4,9h1v1h-1zM5,9h1v1h-1zM8,9h1v1h-1zM12,9h1v1h-1zM13,9h1v1h-1zM14,9h1v1h-1zM15,9h1v1h-1zM16,9h1v1h-1zM17,9h1v1h-1zM18,9h1v1h-1zM19,9h1v1h-1zM20,9h1v1h-1zM23,9h1v1h-1zM26,9h1v1h-1zM27,9h1v1h-1zM29,9h1v1h-1zM30,9h1v1h-1zM1,10h1v1h-1zM3,10h1v1h-1zM4,10h1v1h-1zM5,10h1v1h-1zM6,10h1v1h-1zM9,10h1v1h-1zM10,10h1v1h-1zM11,10h1v1h-1zM13,10h1v1h-1zM14,10h1v1h-1zM15,10h1v1h-1zM16,10h1v1h-1zM17,10h1v1h-1zM21,10h1v1h-1zM25,10h1v1h-1zM28,10h1v1h-1zM30,10h1v1h-1zM31,10h1v1h-1zM1,11h1v1h-1zM2,11h1v1h-1zM3,11h1v1h-1zM4,11h1v1h-1zM5,11h1v1h-1zM7,11h1v1h-1zM8,11h1v1h-1zM11,11h1v1h-1zM13,11h1v1h-1zM16,11h1v1h-1zM17,11h1v1h-1zM18,11h1v1h-1zM19,11h1v1h-1zM21,11h1v1h-1zM22,11h1v1h-1zM25,11h1v1h-1zM28,11h1v1h-1zM29,11h1v1h-1zM30,11h1v1h-1zM31,11h1v1h-1zM3,12h1v1h-1zM6,12h1v1h-1zM8,12h1v1h-1zM9,12h1v1h-1zM12,12h1v1h-1zM14,12h1v1h-1zM15,12h1v1h-1zM16,12h1v1h-1zM20,12h1v1h-1zM24,12h1v1h-1zM28,12h1v1h-1zM29,12h1v1h-1zM1,13h1v1h-1zM5,13h1v1h-1zM10,13h1v1h-1zM13,13h1v1h-1zM15,13h1v1h-1zM18,13h1v1h-1zM22,13h1v1h-1zM23,13h1v1h-1zM25,13h1v1h-1zM26,13h1v1h-1zM31,13h1v1h-1zM32,13h1v1h-1zM1,14h1v1h-1zM3,14h1v1h-1zM5,14h1v1h-1zM6,14h1v1h-1zM15,14h1v1h-1zM16,14h1v1h-1zM17,14h1v1h-1zM20,14h1v1h-1zM22,14h1v1h-1zM25,14h1v1h-1zM26,14h1v1h-1zM27,14h1v1h-1zM28,14h1v1h-1zM31,14h1v1h-1zM1,15h1v1h-1zM2,15h1v1h-1zM3,15h1v1h-1zM7,15h1v1h-1zM11,15h1v1h-1zM15,15h1v1h-1zM18,15h1v1h-1zM21,15h1v1h-1zM23,15h1v1h-1zM24,15h1v1h-1zM25,15h1v1h-1zM26,15h1v1h-1zM27,15h1v1h-1zM29,15h1v1h-1zM30,15h1v1h-1zM0,16h1v1h-1zM1,16h1v1h-1zM2,16h1v1h-1zM4,16h1v1h-1zM5,16h1v1h-1zM6,16h1v1h-1zM12,16h1v1h-1zM15,16h1v1h-1zM16,16h1v1h-1zM17,16h1v1h-1zM20,16h1v1h-1zM22,16h1v1h-1zM25,16h1v1h-1zM27,16h1v1h-1zM28,16h1v1h-1zM29,16h1v1h-1zM32,16h1v1h-1zM1,17h1v1h-1zM8,17h1v1h-1zM10,17h1v1h-1zM12,17h1v1h-1zM13,17h1v1h-1zM14,17h1v1h-1zM15,17h1v1h-1zM16,17h1v1h-1zM18,17h1v1h-1zM19,17h1v1h-1zM20,17h1v1h-1zM23,17h1v1h-1zM26,17h1v1h-1zM27,17h1v1h-1zM29,17h1v1h-1zM30,17h1v1h-1zM0,18h1v1h-1zM2,18h1v1h-1zM3,18h1v1h-1zM5,18h1v1h-1zM6,18h1v1h-1zM8,18h1v1h-1zM9,18h1v1h-1zM13,18h1v1h-1zM14,18h1v1h-1zM15,18h1v1h-1zM16,18h1v1h-1zM18,18h1v1h-1zM20,18h1v1h-1zM21,18h1v1h-1zM25,18h1v1h-1zM27,18h1v1h-1zM28,18h1v1h-1zM30,18h1v1h-1zM31,18h1v1h-1zM2,19h1v1h-1zM4,19h1v1h-1zM8,19h1v1h-1zM10,19h1v1h-1zM11,19h1v1h-1zM14,19h1v1h-1zM16,19h1v1h-1zM21,19h1v1h-1zM24,19h1v1h-1zM26,19h1v1h-1zM27,19h1v1h-1zM28,19h1v1h-1zM29,19h1v1h-1zM30,19h1v1h-1zM32,19h1v1h-1zM2,20h1v1h-1zM3,20h1v1h-1zM6,20h1v1h-1zM9,20h1v1h-1zM11,20h1v1h-1zM12,20h1v1h-1zM13,20h1v1h-1zM14,20h1v1h-1zM18,20h1v1h-1zM25,20h1v1h-1zM28,20h1v1h-1zM29,20h1v1h-1zM31,20h1v1h-1zM0,21h1v1h-1zM1,21h1v1h-1zM2,21h1v1h-1zM3,21h1v1h-1zM5,21h1v1h-1zM8,21h1v1h-1zM10,21h1v1h-1zM13,21h1v1h-1zM14,21h1v1h-1zM15,21h1v1h-1zM16,21h1v1h-1zM20,21h1v1h-1zM21,21h1v1h-1zM22,21h1v1h-1zM23,21h1v1h-1zM32,21h1v1h-1zM0,22h1v1h-1zM2,22h1v1h-1zM3,22h1v1h-1zM4,22h1v1h-1zM5,22h1v1h-1zM6,22h1v1h-1zM10,22h1v1h-1zM12,22h1v1h-1zM18,22h1v1h-1zM19,22h1v1h-1zM21,22h1v1h-1zM27,22h1v1h-1zM28,22h1v1h-1zM31,22h1v1h-1zM0,23h1v1h-1zM4,23h1v1h-1zM8,23h1v1h-1zM9,23h1v1h-1zM11,23h1v1h-1zM16,23h1v1h-1zM19,23h1v1h-1zM20,23h1v1h-1zM21,23h1v1h-1zM22,23h1v1h-1zM23,23h1v1h-1zM24,23h1v1h-1zM25,23h1v1h-1zM26,23h1v1h-1zM27,23h1v1h-1zM29,23h1v1h-1zM30,23h1v1h-1zM31,23h1v1h-1zM0,24h1v1h-1zM3,24h1v1h-1zM4,24h1v1h-1zM5,24h1v1h-1zM6,24h1v1h-1zM7,24h1v1h-1zM10,24h1v1h-1zM13,24h1v1h-1zM14,24h1v1h-1zM17,24h1v1h-1zM19,24h1v1h-1zM22,24h1v1h-1zM23,24h1v1h-1zM24,24h1v1h-1zM25,24h1v1h-1zM26,24h1v1h-1zM27,24h1v1h-1zM28,24h1v1h-1zM8,25h1v1h-1zM9,25h1v1h-1zM11,25h1v1h-1zM12,25h1v1h-1zM13,25h1v1h-1zM17,25h1v1h-1zM18,25h1v1h-1zM19,25h1v1h-1zM20,25h1v1h-1zM21,25h1v1h-1zM24,25h1v1h-1zM28,25h1v1h-1zM30,25h1v1h-1zM31,25h1v1h-1zM32,25h1v1h-1zM0,26h1v1h-1zM1,26h1v1h-1zM2,26h1v1h-1zM3,26h1v1h-1zM4,26h1v1h-1zM5,26h1v1h-1zM6,26h1v1h-1zM12,26h1v1h-1zM14,26h1v1h-1zM15,26h1v1h-1zM17,26h1v1h-1zM20,26h1v1h-1zM22,26h1v1h-1zM23,26h1v1h-1zM24,26h1v1h-1zM26,26h1v1h-1zM28,26h1v1h-1zM30,26h1v1h-1zM31,26h1v1h-1zM0,27h1v1h-1zM6,27h1v1h-1zM8,27h1v1h-1zM9,27h1v1h-1zM11,27h1v1h-1zM12,27h1v1h-1zM13,27h1v1h-1zM15,27h1v1h-1zM16,27h1v1h-1zM17,27h1v1h-1zM18,27h1v1h-1zM19,27h1v1h-1zM20,27h1v1h-1zM21,27h1v1h-1zM23,27h1v1h-1zM24,27h1v1h-1zM28,27h1v1h-1zM29,27h1v1h-1zM30,27h1v1h-1zM31,27h1v1h-1zM0,28h1v1h-1zM2,28h1v1h-1zM3,28h1v1h-1zM4,28h1v1h-1zM6,28h1v1h-1zM8,28h1v1h-1zM9,28h1v1h-1zM11,28h1v1h-1zM13,28h1v1h-1zM14,28h1v1h-1zM15,28h1v1h-1zM16,28h1v1h-1zM19,28h1v1h-1zM21,28h1v1h-1zM22,28h1v1h-1zM24,28h1v1h-1zM25,28h1v1h-1zM26,28h1v1h-1zM27,28h1v1h-1zM28,28h1v1h-1zM29,28h1v1h-1zM0,29h1v1h-1zM2,29h1v1h-1zM3,29h1v1h-1zM4,29h1v1h-1zM6,29h1v1h-1zM8,29h1v1h-1zM14,29h1v1h-1zM15,29h1v1h-1zM18,29h1v1h-1zM22,29h1v1h-1zM24,29h1v1h-1zM25,29h1v1h-1zM28,29h1v1h-1zM29,29h1v1h-1zM31,29h1v1h-1zM32,29h1v1h-1zM0,30h1v1h-1zM2,30h1v1h-1zM3,30h1v1h-1zM4,30h1v1h-1zM6,30h1v1h-1zM8,30h1v1h-1zM9,30h1v1h-1zM12,30h1v1h-1zM13,30h1v1h-1zM14,30h1v1h-1zM15,30h1v1h-1zM16,30h1v1h-1zM17,30h1v1h-1zM18,30h1v1h-1zM21,30h1v1h-1zM23,30h1v1h-1zM26,30h1v1h-1zM27,30h1v1h-1zM29,30h1v1h-1zM0,31h1v1h-1zM6,31h1v1h-1zM9,31h1v1h-1zM10,31h1v1h-1zM11,31h1v1h-1zM12,31h1v1h-1zM13,31h1v1h-1zM14,31h1v1h-1zM15,31h1v1h-1zM19,31h1v1h-1zM20,31h1v1h-1zM21,31h1v1h-1zM22,31h1v1h-1zM24,31h1v1h-1zM25,31h1v1h-1zM28,31h1v1h-1zM29,31h1v1h-1zM30,31h1v1h-1zM0,32h1v1h-1zM1,32h1v1h-1zM2,32h1v1h-1zM3,32h1v1h-1zM4,32h1v1h-1zM5,32h1v1h-1zM6,32h1v1h-1zM8,32h1v1h-1zM9,32h1v1h-1zM10,32h1v1h-1zM14,32h1v1h-1zM15,32h1v1h-1zM16,32h1v1h-1zM17,32h1v1h-1zM23,32h1v1h-1zM24,32h1v1h-1zM26,32h1v1h-1zM27,32h1v1h-1zM30,32h1v1h-1zM31,32h1v1h-1z" fill="#14284b"/></svg>
+      <div><strong>Open on your phone</strong><span>Point your camera at the code to visit this page.</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="gutter">
+  <div class="inner builder">
+    <div class="controls">
+      <h2>Build your template</h2>
+
+      <fieldset>
+        <legend><b>1</b>Template</legend>
+        <div class="opts tpls" id="tpls"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>2</b>Look</legend>
+        <div class="opts looks" id="looks"></div>
+      </fieldset>
+
+      <fieldset>
+        <legend><b>3</b>Color</legend>
+        <div class="swatches" id="swatches">
+          <label class="custom" for="customColor"><input type="color" id="customColor" value="#1f3a68"> Custom</label>
+        </div>
+        <p class="colorname" id="colorname" aria-live="polite"></p>
+      </fieldset>
+
+      <div>
+        <button class="btn" type="button" id="dl">Download PDF</button>
+        <p class="status" id="status" aria-live="polite"></p>
+      </div>
+
+      <p class="ats"><strong>ATS-friendly in every look:</strong> one column, standard section names, real selectable text, standard fonts, and no tables, icons or photos. Color only touches your name, headings and lines, so it prints well in black and white too.</p>
+    </div>
+
+    <div class="stage">
+      <div class="sheet"><canvas id="preview" aria-label="Live preview of your resume template"></canvas></div>
+      <p class="caption" id="caption">US Letter · 8.5 × 11 in · 1 page</p>
+    </div>
+  </div>
+
+  <div class="inner">
+    <section class="howto" aria-labelledby="howto-h">
+      <h2 id="howto-h">How to edit and save your resume</h2>
+      <p class="howto-required"><b>Required:</b> Save your resume in Google Drive, using your school account or your personal Gmail. That way it's backed up, and you can update it from any device.</p>
+      <p class="howto-lede">Drive turns your PDF into a document you can type in. This works best on a computer.</p>
+      <ol class="flow">
+        <li class="step">
+          <span class="num">1</span>
+          <h3>Download your PDF</h3>
+          <div class="mock"><span class="m-btn">Download PDF</span><span class="m-file"><i></i>Classic-Resume.pdf</span></div>
+          <p>Build your template above and download it to your computer.</p>
+        </li>
+        <li class="step">
+          <span class="num">2</span>
+          <h3>Upload it to Drive</h3>
+          <div class="mock"><span class="m-new">+ New</span><span class="m-menu"><span>New folder</span><span class="hi">File upload</span><span>Folder upload</span></span></div>
+          <p>Go to <b>drive.google.com</b> and sign in with your <b>school account</b> or <b>personal Gmail</b>. Click <b>New</b>, then <b>File upload</b>, and choose your PDF.</p>
+        </li>
+        <li class="step">
+          <span class="num">3</span>
+          <h3>Open with Google Docs</h3>
+          <div class="mock"><span class="m-menu"><span>Preview</span><span class="hi">Open with ›</span></span><span class="m-menu sub"><span class="hi">Google Docs</span></span></div>
+          <p>Right-click the file. Choose <b>Open with</b>, then <b>Google Docs</b>.</p>
+        </li>
+        <li class="step">
+          <span class="num">4</span>
+          <h3>Edit and save as PDF</h3>
+          <div class="mock"><span class="m-doc"><span class="old">[Your Name]</span><span class="new">Maria Lopez</span></span><span class="m-path">File › Download › <b>PDF</b></span></div>
+          <p>Replace every [bracket] with your info. Your Google Doc saves automatically in Drive. To apply, click <b>File</b> › <b>Download</b> › <b>PDF document</b>.</p>
+        </li>
+      </ol>
+      <p class="howto-note"><b>Good to know:</b> When Docs converts a PDF, some lines, colors or spacing can shift. Check the layout and fix anything that moved before you save.</p>
+    </section>
+
+    <section class="tips">
+      <h2>Before you send your resume</h2>
+      <ol>
+        <li>Keep it to one page. Put your strongest experience first.</li>
+        <li>Start each bullet with an action verb: led, built, organized, trained.</li>
+        <li>Add numbers where you can, such as hours, people served or money raised.</li>
+        <li>Replace every [bracketed] placeholder and delete sections you don't need.</li>
+        <li>Save it as a PDF named <b>Lastname-Firstname-Resume.pdf</b>.</li>
+        <li>Bring it to Career Services for a free review before you apply.</li>
+      </ol>
+    </section>
+  </div>
+</main>
+
+<footer class="gutter"><div class="inner">Questions? Stop by Career Services to meet with an advisor.</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+(()=>{
+/* ---------- content ---------- */
+const CONTACT="City, State  |  (555) 123-4567  |  your.name@email.com  |  linkedin.com/in/yourname";
+const H=s=>({t:"head",s}),E=(l,r,sub)=>({t:"entry",l,r,sub}),B=s=>({t:"bullet",s}),P=s=>({t:"para",s}),K=(k,v)=>({t:"kv",k,v}),S=s=>({t:"subhead",s}),G={t:"gap"},L=(l,r)=>({t:"line",l,r});
+const TEMPLATES=[
+ {id:"First-Job",title:"First Job",tag:"No experience yet",desc:"Little or no work history",contact:CONTACT,blocks:[
+  H("Objective"),P("Motivated [college / program] student seeking a part-time [position] at [type of business]. Eager to learn, dependable, and ready to bring a positive attitude to the team."),
+  H("Education"),E("College or School Name, City, State","Expected Month Year","Degree, Certificate, or Program"),P("GPA: 3.X  |  Relevant classes: [class], [class], [class]"),L("High School Diploma - School Name, City, State","Year"),
+  H("Skills"),B("Friendly and comfortable talking with customers and adults"),B("Reliable: perfect attendance and always on time [give proof if you can]"),B("Computer skills: Google Docs, Sheets, Slides, Canva"),B("Bilingual: English and [language]"),
+  H("Activities & Leadership"),E("Club, Team, or Organization","Year - Present","Role (Member, Captain, Treasurer)"),B("What you did: organized a fundraiser that raised $500 for [cause]."),G,E("Club, Team, or Organization","Year - Year"),B("What you learned or contributed."),
+  H("Volunteer & Informal Work"),E("Babysitting, Lawn Care, Tutoring, or Volunteering","Year - Present"),B("Cared for two children (ages 4 and 7) after school, three days a week."),B("Volunteered 40+ hours at [food bank, church, shelter]."),
+  H("Awards"),B("[Honor Roll, Student of the Month, sports or academic awards], Year")]},
+ {id:"Classic",title:"Classic",tag:"Most jobs",desc:"Most recent job first",contact:CONTACT,blocks:[
+  H("Summary"),P("Reliable, motivated [major / field] student with experience in [area]. Strong in [skill], [skill], and [skill]. Seeking a [type of role] where I can [what you want to contribute]."),
+  H("Experience"),E("Job Title","Month Year - Present","Company Name, City, State"),B("Start with an action verb: Assisted, Led, Organized, Trained, Improved."),B("Show results with numbers when you can: Served 60+ customers per shift."),B("Keep each bullet to one line if possible."),G,
+  E("Job Title","Month Year - Month Year","Company Name, City, State"),B("Describe what you did and what changed because of it."),B("List 2 to 4 bullets per job, most important first."),
+  H("Education"),E("School Name, City, State","Expected Month Year","Degree or Diploma, Major"),P("GPA: 3.X / 4.0 (include if 3.0 or higher)  |  Honors: [Dean's List, awards]"),
+  H("Skills"),K("Technical","Microsoft Office, Google Workspace, [software]"),K("Languages","English (fluent), [language] (conversational)"),K("Strengths","Customer service, teamwork, time management")]},
+ {id:"College-Internship",title:"Internship",tag:"College",desc:"Education and projects first",contact:CONTACT+"  |  portfolio.com",blocks:[
+  H("Education"),E("University Name, City, State","Expected May 20XX","Bachelor of [Science / Arts] in [Major], Minor in [Minor]"),P("GPA: 3.X / 4.0  |  Dean's List (Fall 20XX, Spring 20XX)"),K("Relevant Coursework","[Course], [Course], [Course], [Course]"),
+  H("Projects"),E("Project Name","Month Year","Class project / personal project / hackathon"),B("One sentence on what you built and why."),B("Tools used: [Python, Excel, Figma, etc.]. Result: [what it achieved]."),G,E("Project Name","Month Year"),B("Explain your role if it was a team project (team of 4)."),
+  H("Experience"),E("Position / Intern Title","Month Year - Month Year","Organization, City, State"),B("Action verb + task + result (Analyzed survey data from 300 students...)."),B("Include campus jobs, research, and part-time work."),
+  H("Leadership & Involvement"),E("Organization Name - Role","Year - Present"),B("What you led, planned, or improved."),
+  H("Skills"),K("Technical","[Excel, SQL, Python, Adobe, CAD, lab techniques]"),K("Certifications","[CPR, Google Analytics, OSHA 10]"),K("Languages","[Language] (level)")]},
+ {id:"Graduating-Student",title:"Graduating Student",tag:"Graduating",desc:"Skills and certifications up front",contact:CONTACT,blocks:[
+  H("Summary"),P("Graduating [major] student with hands-on experience in [area] and a strong foundation in [skill] and [skill]. Ready to bring [quality] to an entry-level [job title] role starting [Month Year]."),
+  H("Skills"),K("Technical","[Software, tools, equipment, or lab techniques]"),K("Professional","Communication, teamwork, problem solving, time management"),K("Languages","English (fluent), [language] (level)"),
+  H("Certifications & Certificates"),L("Certification Name - Issuing Organization","Month Year"),L("Certificate Program - School or Provider","Month Year"),L("[CPR / First Aid, OSHA 10, Google Career Certificate, ServSafe]","Month Year"),
+  H("Education"),E("School Name, City, State","Graduating Month Year","Degree, Diploma, or Certificate in [Major / Program]"),P("GPA: 3.X / 4.0  |  Honors: [Dean's List, honor society, scholarships]"),K("Relevant Coursework","[Course], [Course], [Course]"),
+  H("Work Experience"),E("Job Title","Month Year - Present","Company Name, City, State"),B("Start with an action verb and show a result: Trained 5 new hires on opening procedures."),B("Include internships, practicums, clinicals, and part-time jobs."),G,
+  E("Job Title","Month Year - Month Year","Company Name, City, State"),B("Describe what you did and what changed because of it."),B("List 2 to 4 bullets per job, most important first.")]},
+ {id:"Skills-Based",title:"Skills-Based",tag:"Career change",desc:"Grouped by skill, not job",contact:CONTACT,blocks:[
+  H("Profile"),P("Adaptable professional transitioning into [target field] with transferable strengths in [skill], [skill], and [skill]. Known for [quality employers would value]."),
+  H("Key Skills"),S("Communication"),B("Example that proves the skill: presented weekly updates to a team of 12."),B("Second example from work, school, or volunteering."),
+  S("Organization & Planning"),B("Coordinated schedules for 25 volunteers across 3 events."),B("Managed inventory, deadlines, or budgets [add a number]."),
+  S("Problem Solving"),B("Identified a problem, took action, and describe the result."),B("Rename these headings to fit the job posting."),
+  H("Work History"),L("Job Title - Company Name, City, State","Year - Year"),L("Job Title - Company Name, City, State","Year - Year"),L("Volunteer Role - Organization, City, State","Year - Year"),
+  H("Education & Training"),L("Degree, Certificate, or Program - School Name","Year"),L("Certification or Training - Provider","Year"),
+  H("Technical Skills"),P("Microsoft Office, Google Workspace, [industry software], [tools]")]}
+];
+const LOOKS={
+ traditional:{name:"Traditional",desc:"Serif, centered",font:"times",body:10.8,center:true,nameSize:24,nameCase:"upper",nameCs:1,nameColor:"accent",headerRule:1.4,secSize:11.5,secCs:1,secUpper:true,secRule:"accent",secBefore:16,secAfter:17,top:72},
+ modern:{name:"Modern",desc:"Sans-serif, left",font:"helvetica",body:10,center:false,topBar:12,nameSize:25,nameCase:"as",nameCs:0,nameColor:"accent",headerRule:0,secSize:10.5,secCs:1.2,secUpper:true,secRule:"grey",secBefore:16,secAfter:16,top:74},
+ compact:{name:"Compact",desc:"Tight, minimal",font:"helvetica",body:9.6,center:true,nameSize:20,nameCase:"upper",nameCs:2.4,nameColor:"ink",headerRule:0.8,secSize:10.5,secCs:0.3,secUpper:false,secRule:null,secBefore:12,secAfter:12,top:64}
+};
+const COLORS=[["Navy","#1f3a68"],["Crimson","#a6192e"],["Forest","#2f5d3a"],["Teal","#1b6b74"],["Plum","#5b2a6e"],["Charcoal","#333a44"]];
+const INK="#1a1a1a",GREY="#b9bec8",MUTED="#4a4f58";
+
+/* ---------- state ---------- */
+const st={tpl:1,look:"traditional",color:COLORS[0][1],colorName:"Navy"};
+try{const s=JSON.parse(localStorage.getItem("resume-builder")||"null");if(s&&TEMPLATES[s.tpl]&&LOOKS[s.look]&&/^#[0-9a-f]{6}$/i.test(s.color))Object.assign(st,s)}catch(e){}
+const save=()=>{try{localStorage.setItem("resume-builder",JSON.stringify(st))}catch(e){}};
+
+/* ---------- layout engine (points, US Letter 612 x 792) ---------- */
+const PW=612,PH=792,X0=54,X1=558,W=X1-X0;
+let M=null; // jsPDF instance used only for measuring
+function measurer(){if(!M&&window.jspdf)M=new window.jspdf.jsPDF({unit:"pt",format:"letter"});return M}
+function setM(font,style,size){const m=measurer();m.setFont(font,style);m.setFontSize(size);return m}
+const width=(s,font,style,size,cs=0)=>setM(font,style,size).getTextWidth(s)+cs*Math.max(0,s.length-1);
+const wrap=(s,font,style,size,w)=>setM(font,style,size).splitTextToSize(s,w);
+
+function layout(tpl,lk,accent){
+  const ops=[],f=lk.font,b=lk.body,lh=b*1.34;let y=lk.top;
+  const T=(s,x,yy,o={})=>ops.push({k:"text",s,x,y:yy,font:f,style:o.style||"normal",size:o.size||b,color:o.color||INK,align:o.align||"left",cs:o.cs||0});
+  const centeredX=(s,style,size,cs)=>PW/2-width(s,f,style,size,cs)/2;
+  if(lk.topBar)ops.push({k:"rect",x:0,y:0,w:PW,h:lk.topBar,color:accent});
+  const nm=lk.nameCase==="upper"?"YOUR NAME":"Your Name",nc=lk.nameColor==="accent"?accent:INK;
+  T(nm,lk.center?centeredX(nm,"bold",lk.nameSize,lk.nameCs):X0,y,{style:"bold",size:lk.nameSize,color:nc,cs:lk.nameCs});
+  y+=lk.nameSize*0.55+6;
+  for(const ln of wrap(tpl.contact,f,"normal",b-0.8,W)){T(ln,lk.center?centeredX(ln,"normal",b-0.8,0):X0,y,{size:b-0.8,color:MUTED});y+=(b-0.8)*1.35}
+  if(lk.headerRule){y+=2;ops.push({k:"line",x1:X0,y1:y,x2:X1,y2:y,w:lk.headerRule,color:lk.nameColor==="accent"?accent:GREY})}
+  for(const bl of tpl.blocks){
+    if(bl.t==="head"){y+=lk.secBefore;const s=lk.secUpper?bl.s.toUpperCase():bl.s;
+      T(s,X0,y,{style:"bold",size:lk.secSize,color:accent,cs:lk.secCs});
+      if(lk.secRule){ops.push({k:"line",x1:X0,y1:y+4,x2:X1,y2:y+4,w:lk.secRule==="accent"?0.8:0.6,color:lk.secRule==="accent"?accent:GREY})}
+      y+=lk.secAfter;}
+    else if(bl.t==="entry"||bl.t==="line"){T(bl.l,X0,y,{style:"bold"});if(bl.r)T(bl.r,X1,y,{align:"right"});y+=lh;
+      if(bl.sub){T(bl.sub,X0,y,{style:"italic",color:MUTED});y+=lh}}
+    else if(bl.t==="bullet"){const ls=wrap(bl.s,f,"normal",b,W-14);ops.push({k:"dot",x:X0+5,y:y-b*0.3,r:1.25,color:INK});
+      ls.forEach(l=>{T(l,X0+14,y);y+=lh})}
+    else if(bl.t==="para"){wrap(bl.s,f,"normal",b,W).forEach(l=>{T(l,X0,y);y+=lh})}
+    else if(bl.t==="kv"){const k=bl.k+": ",kw=width(k,f,"bold",b)+2;T(k,X0,y,{style:"bold"});
+      wrap(bl.v,f,"normal",b,W-kw).forEach((l,i)=>{T(l,X0+kw,y);y+=lh})}
+    else if(bl.t==="subhead"){y+=3;T(bl.s,X0,y,{style:"bold",color:accent});y+=lh}
+    else if(bl.t==="gap"){y+=b*0.45}
+  }
+  return {ops,bottom:y};
+}
+
+/* ---------- canvas preview ---------- */
+const FAM={helvetica:'Helvetica, Arial, "Liberation Sans", sans-serif',times:'"Times New Roman", Times, "Liberation Serif", serif'};
+function paint(canvas,cssW){
+  const tpl=TEMPLATES[canvas.dataset.tpl??st.tpl],lk=LOOKS[st.look];
+  if(!measurer())return;
+  const dpr=window.devicePixelRatio||1,cssH=cssW*PH/PW;
+  canvas.width=Math.round(cssW*dpr);canvas.height=Math.round(cssH*dpr);
+  const c=canvas.getContext("2d");c.setTransform(dpr*cssW/PW,0,0,dpr*cssW/PW,0,0);
+  c.fillStyle="#fff";c.fillRect(0,0,PW,PH);
+  for(const o of layout(tpl,lk,st.color).ops){
+    if(o.k==="text"){const sty=(o.style.includes("italic")?"italic ":"")+(o.style.includes("bold")?"bold ":"");
+      c.font=`${sty}${o.size}px ${FAM[o.font]}`;c.fillStyle=o.color;c.textAlign=o.align;c.textBaseline="alphabetic";
+      if("letterSpacing" in c)c.letterSpacing=o.cs+"px";c.fillText(o.s,o.x,o.y);if("letterSpacing" in c)c.letterSpacing="0px"}
+    else if(o.k==="line"){c.strokeStyle=o.color;c.lineWidth=o.w;c.beginPath();c.moveTo(o.x1,o.y1);c.lineTo(o.x2,o.y2);c.stroke()}
+    else if(o.k==="rect"){c.fillStyle=o.color;c.fillRect(o.x,o.y,o.w,o.h)}
+    else if(o.k==="dot"){c.fillStyle=o.color;c.beginPath();c.arc(o.x,o.y,o.r,0,7);c.fill()}
+  }
+}
+
+/* ---------- PDF ---------- */
+function buildPDF(){
+  const tpl=TEMPLATES[st.tpl],lk=LOOKS[st.look];
+  const d=new window.jspdf.jsPDF({unit:"pt",format:"letter"});
+  d.setProperties({title:tpl.title+" Resume Template",creator:"Career Services",subject:"Resume template"});
+  for(const o of layout(tpl,lk,st.color).ops){
+    if(o.k==="text"){d.setFont(o.font,o.style);d.setFontSize(o.size);d.setTextColor(o.color);d.setCharSpace(o.cs);
+      d.text(o.s,o.x,o.y,o.align==="right"?{align:"right"}:undefined);d.setCharSpace(0)}
+    else if(o.k==="line"){d.setDrawColor(o.color);d.setLineWidth(o.w);d.line(o.x1,o.y1,o.x2,o.y2)}
+    else if(o.k==="rect"){d.setFillColor(o.color);d.rect(o.x,o.y,o.w,o.h,"F")}
+    else if(o.k==="dot"){d.setFillColor(o.color);d.circle(o.x,o.y,o.r,"F")}
+  }
+  return d.output("blob");
+}
+
+/* ---------- UI ---------- */
+const $=id=>document.getElementById(id);
+$("tpls").innerHTML=TEMPLATES.map((t,i)=>`<button type="button" class="opt" data-tpl="${i}"><span class="tag">${t.tag}</span><span class="t">${t.title}</span><span class="d">${t.desc}</span></button>`).join("");
+$("looks").innerHTML=Object.entries(LOOKS).map(([k,l])=>`<button type="button" class="opt" data-look="${k}"><span class="t">${l.name}</span><span class="d">${l.desc}</span></button>`).join("");
+$("swatches").insertAdjacentHTML("afterbegin",COLORS.map(([n,h])=>`<button type="button" class="sw" data-color="${h}" data-name="${n}" style="background:${h}" aria-label="${n}" title="${n}"></button>`).join(""));
+
+function lum(hex){const v=[1,3,5].map(i=>{const c=parseInt(hex.slice(i,i+2),16)/255;return c<=.03928?c/12.92:((c+.055)/1.055)**2.4});return .2126*v[0]+.7152*v[1]+.0722*v[2]}
+function sync(){
+  document.querySelectorAll("[data-tpl]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.tpl===st.tpl));
+  document.querySelectorAll("[data-look]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.look===st.look));
+  document.querySelectorAll(".sw").forEach(b=>b.setAttribute("aria-pressed",b.dataset.color===st.color&&st.colorName!=="Custom"));
+  $("customColor").value=st.color;
+  const contrast=1.05/(lum(st.color)+.05);
+  $("colorname").innerHTML=`Color: <b>${st.colorName}</b>`+(contrast<4.5?` · <span class="warn">This color is light and may be hard to read. Try a darker shade.</span>`:"");
+  $("caption").textContent=`${TEMPLATES[st.tpl].title} · ${LOOKS[st.look].name} · ${st.colorName} · US Letter, 1 page`;
+  draw();save();
+}
+function draw(){const cv=$("preview");paint(cv,cv.clientWidth||520)}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-tpl]"),l=e.target.closest("[data-look]"),c=e.target.closest(".sw");
+  if(t){st.tpl=+t.dataset.tpl;sync()}else if(l){st.look=l.dataset.look;sync()}else if(c){st.color=c.dataset.color;st.colorName=c.dataset.name;sync()}
+});
+$("customColor").addEventListener("input",e=>{st.color=e.target.value;st.colorName="Custom";sync()});
+let rt;addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(draw,120)});
+
+let downloads=null;
+(async()=>{try{downloads=window.claude?.use?await window.claude.use("downloads"):null}catch(e){downloads=null}})();
+function plainSave(name,blob){const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
+
+$("dl").addEventListener("click",async()=>{
+  if(!window.jspdf)return;const b=$("dl");b.disabled=true;$("status").textContent="Making your PDF…";
+  const tpl=TEMPLATES[st.tpl],name=`${tpl.id}-Resume-${LOOKS[st.look].name}-${st.colorName}.pdf`;
+  try{if(downloads)await downloads.save({filename:name,data:buildPDF()});else plainSave(name,buildPDF());$("status").textContent=`Saved ${name}. Check your Downloads folder.`}
+  catch(err){const c=err&&err.code;$("status").textContent=c==="declined"?"Download canceled.":c==="rate_limited"?"One moment, then try again.":"That download didn't work. Try again, or open this page in another browser."}
+  finally{b.disabled=false}
+});
+
+if(!window.jspdf){$("status").textContent="The PDF tool didn't load. Check your connection and reload the page.";$("dl").disabled=true}
+sync();
+document.fonts&&document.fonts.ready.then(draw);
+})();
+</script>
+
+</body>
+</html>
