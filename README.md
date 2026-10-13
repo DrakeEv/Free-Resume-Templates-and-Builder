@@ -2,6 +2,8 @@
 
 A one-page website where students build an ATS-friendly resume template, preview it live, and download it as a PDF. Made for Career Services.
 
+**🔗 Live site: [drakeev.github.io/Free-Resume-Templates-and-Builder](https://drakeev.github.io/Free-Resume-Templates-and-Builder/)**
+
 > **AI disclosure:** This project was created with the help of AI. The website code, resume templates, and documentation were written by Claude, an AI model made by Anthropic, working from instructions given by a Career Services advisor. A person reviewed the output and made the decisions about content, wording, and design. See [AI disclosure](#ai-disclosure) below for details.
 
 ---
