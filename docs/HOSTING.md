@@ -33,6 +33,7 @@ The QR code on the page has to point to wherever the site lives. If you move the
 ## Checklist before you share it
 
 - [ ] The site opens on a phone and on a computer
-- [ ] **Download PDF** saves a file on both
+- [ ] **Download for Google Docs (.docx)** and **Download PDF** both save a file
+- [ ] The .docx opens in Google Docs with its lines and bullets
 - [ ] The QR code opens the right address
 - [ ] The school name and wording are correct (see [CUSTOMIZING.md](CUSTOMIZING.md))

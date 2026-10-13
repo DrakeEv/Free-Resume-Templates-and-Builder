@@ -8,6 +8,7 @@ These notes are for whoever maintains the site.
 
 - **Fonts:** Archivo and Source Sans 3 from Google Fonts, used only for the website itself, not the resumes
 - **jsPDF 2.5.1** from cdnjs (`https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js`), which builds the PDFs in the browser
+- **docx 9.5.0** from jsDelivr (`https://cdn.jsdelivr.net/npm/docx@9.5.0/dist/index.iife.js`), which builds the Word files in the browser
 
 There is no backend. All logic runs in one inline `<script>`.
 
@@ -35,6 +36,18 @@ The same operations are drawn twice:
 
 Bullets are drawn as small filled circles instead of a bullet character. Template text uses plain ASCII because the standard PDF fonts can't encode some Unicode characters.
 
+## Word / Google Docs file
+
+`buildDOCX()` builds a .docx from the same `TEMPLATES`, `LOOKS`, and color, without using the drawing operations. Each block becomes real Word formatting that Google Docs keeps when it opens the file:
+
+- Section and header lines are **paragraph bottom borders**, not drawn shapes
+- Dates are pushed right with a **right-aligned tab stop** at 7 in
+- Bullets use a **bulleted list** (Word numbering), not drawn dots
+- Fonts are **Arial** (Modern and Compact) or **Times New Roman** (Traditional), which Google Docs has built in
+- The Modern look's color band is a thick top border above the name
+
+This is why students should upload the .docx, not the PDF: Google Docs only pulls the text out of a PDF and drops its lines, bullets, and tab alignment.
+
 ## Downloads
 
 When the page runs inside Claude's artifact viewer, it saves files through the viewer's `downloads` capability. Anywhere else, it falls back to a normal browser download, using a temporary `blob:` link with the `download` attribute.
@@ -48,3 +61,4 @@ The student's last template, look, and color are kept in `localStorage` under th
 1. Open `index.html` in a browser.
 2. Try every template with every look. Make sure nothing runs off the bottom of the preview.
 3. Download a PDF, open it, select all the text, and paste it into a plain text editor. It should read top to bottom in the right order. That's roughly what an ATS sees.
+4. Download the .docx, upload it to Google Drive, and open it with Google Docs. Check that the lines, bullets, and dates look right and that it still fits on one page.

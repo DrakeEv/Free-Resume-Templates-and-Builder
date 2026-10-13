@@ -64,6 +64,9 @@ legend b{display:inline grid;place-items:center;width:22px;height:22px;border-ra
 .warn{color:var(--red-dark)}
 .btn{font:700 17px var(--body);color:var(--white);background:var(--red);border:0;border-radius:5px;padding:14px 16px;cursor:pointer;width:100%}
 .btn:hover{background:var(--red-dark)}
+.btn-2{margin-top:8px;background:var(--white);color:var(--navy);box-shadow:inset 0 0 0 2px var(--navy)}
+.btn-2:hover{background:#eef2f9}
+.dl-hint{font-size:14px;color:var(--muted);margin:8px 0 0}
 .btn[disabled]{opacity:.65;cursor:progress}
 a.btn{display:block;text-align:center;text-decoration:none}
 .status{font-size:14px;color:var(--muted);min-height:1.4em;margin:6px 0 0}
@@ -156,7 +159,9 @@ footer .inner{border-top:1px solid var(--line);padding-top:16px}
       </fieldset>
 
       <div>
-        <button class="btn" type="button" id="dl">Download PDF</button>
+        <button class="btn" type="button" id="dlDocx">Download for Google Docs (.docx)</button>
+        <button class="btn btn-2" type="button" id="dl">Download PDF</button>
+        <p class="dl-hint"><b>Editing your resume?</b> Use the Google Docs file. A PDF opened in Docs loses its lines, bullets and date alignment.</p>
         <p class="status" id="status" aria-live="polite"></p>
       </div>
 
@@ -173,19 +178,19 @@ footer .inner{border-top:1px solid var(--line);padding-top:16px}
     <section class="howto" aria-labelledby="howto-h">
       <h2 id="howto-h">How to edit and save your resume</h2>
       <p class="howto-required"><b>Required:</b> Save your resume in Google Drive, using your school account or your personal Gmail. That way it's backed up, and you can update it from any device.</p>
-      <p class="howto-lede">Drive turns your PDF into a document you can type in. This works best on a computer.</p>
+      <p class="howto-lede">Upload the Google Docs file (.docx) to Drive and it opens as a document you can type in, with its lines and bullets intact. This works best on a computer.</p>
       <ol class="flow">
         <li class="step">
           <span class="num">1</span>
-          <h3>Download your PDF</h3>
-          <div class="mock"><span class="m-btn">Download PDF</span><span class="m-file"><i></i>Classic-Resume.pdf</span></div>
-          <p>Build your template above and download it to your computer.</p>
+          <h3>Download the Docs file</h3>
+          <div class="mock"><span class="m-btn">Download for Google Docs</span><span class="m-file"><i></i>Classic-Resume.docx</span></div>
+          <p>Build your template above and click <b>Download for Google Docs (.docx)</b>.</p>
         </li>
         <li class="step">
           <span class="num">2</span>
           <h3>Upload it to Drive</h3>
           <div class="mock"><span class="m-new">+ New</span><span class="m-menu"><span>New folder</span><span class="hi">File upload</span><span>Folder upload</span></span></div>
-          <p>Go to <b>drive.google.com</b> and sign in with your <b>school account</b> or <b>personal Gmail</b>. Click <b>New</b>, then <b>File upload</b>, and choose your PDF.</p>
+          <p>Go to <b>drive.google.com</b> and sign in with your <b>school account</b> or <b>personal Gmail</b>. Click <b>New</b>, then <b>File upload</b>, and choose your .docx file.</p>
         </li>
         <li class="step">
           <span class="num">3</span>
@@ -200,7 +205,7 @@ footer .inner{border-top:1px solid var(--line);padding-top:16px}
           <p>Replace every [bracket] with your info. Your Google Doc saves automatically in Drive. To apply, click <b>File</b> › <b>Download</b> › <b>PDF document</b>.</p>
         </li>
       </ol>
-      <p class="howto-note"><b>Good to know:</b> When Docs converts a PDF, some lines, colors or spacing can shift. Check the layout and fix anything that moved before you save.</p>
+      <p class="howto-note"><b>Good to know:</b> Upload the .docx file, not the PDF. Google Docs can't convert a PDF's lines, bullets or date alignment, so a PDF loses its formatting when you open it there.</p>
     </section>
 
     <section class="tips">
@@ -220,6 +225,7 @@ footer .inner{border-top:1px solid var(--line);padding-top:16px}
 <footer class="gutter"><div class="inner">Questions? Stop by Career Services to meet with an advisor.</div></footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx@9.5.0/dist/index.iife.js"></script>
 <script>
 (()=>{
 /* ---------- content ---------- */
@@ -380,6 +386,50 @@ $("dl").addEventListener("click",async()=>{
   catch(err){const c=err&&err.code;$("status").textContent=c==="declined"?"Download canceled.":c==="rate_limited"?"One moment, then try again.":"That download didn't work. Try again, or open this page in another browser."}
   finally{b.disabled=false}
 });
+
+/* ---------- Word / Google Docs file ---------- */
+async function buildDOCX(){
+  const D=window.docx,tpl=TEMPLATES[st.tpl],lk=LOOKS[st.look];
+  const font=lk.font==="times"?"Times New Roman":"Arial",acc=st.color.slice(1).toUpperCase(),ink="1A1A1A",mut="4A4F58",grey="B9BEC8";
+  const hp=pt=>Math.round(pt*2),tw=pt=>Math.round(pt*20),RIGHT=10080,LINE=252;
+  const run=(text,o={})=>new D.TextRun({text,font,size:hp(o.size||lk.body),bold:!!o.bold,italics:!!o.italics,color:o.color||ink,characterSpacing:o.cs?Math.round(o.cs*20):undefined});
+  const para=(children,o={})=>new D.Paragraph({children,alignment:o.center?D.AlignmentType.CENTER:D.AlignmentType.LEFT,
+    spacing:{before:o.before||0,after:o.after||0,line:LINE},border:o.border,tabStops:o.tabs?[{type:D.TabStopType.RIGHT,position:RIGHT}]:undefined,
+    numbering:o.bullet?{reference:"dots",level:0}:undefined,keepNext:!!o.keepNext});
+  const rule=(color,wpt,space=2)=>({style:D.BorderStyle.SINGLE,size:Math.max(2,Math.round(wpt*8)),color,space});
+  const out=[];
+  const nm=lk.nameCase==="upper"?"YOUR NAME":"Your Name";
+  out.push(para([run(nm,{bold:true,size:lk.nameSize,color:lk.nameColor==="accent"?acc:ink,cs:lk.nameCs})],
+    {center:lk.center,after:tw(4),border:lk.topBar?{top:rule(acc,6,14)}:undefined}));
+  out.push(para([run(tpl.contact,{size:lk.body-0.8,color:mut})],{center:lk.center,after:tw(2),
+    border:lk.headerRule?{bottom:rule(lk.nameColor==="accent"?acc:grey,lk.headerRule,6)}:undefined}));
+  for(const b of tpl.blocks){
+    if(b.t==="head")out.push(para([run(lk.secUpper?b.s.toUpperCase():b.s,{bold:true,size:lk.secSize,color:acc,cs:lk.secCs})],
+      {before:tw(lk.secBefore-2),after:tw(4),keepNext:true,border:lk.secRule?{bottom:lk.secRule==="accent"?rule(acc,0.8):rule(grey,0.6)}:undefined}));
+    else if(b.t==="entry"||b.t==="line"){out.push(para([run(b.l,{bold:true}),...(b.r?[run("\t"+b.r)]:[])],{tabs:true,keepNext:!!b.sub}));
+      if(b.sub)out.push(para([run(b.sub,{italics:true,color:mut})]))}
+    else if(b.t==="bullet")out.push(para([run(b.s)],{bullet:true}));
+    else if(b.t==="para")out.push(para([run(b.s)]));
+    else if(b.t==="kv")out.push(para([run(b.k+": ",{bold:true}),run(b.v)]));
+    else if(b.t==="subhead")out.push(para([run(b.s,{bold:true,color:acc})],{before:tw(3),keepNext:true}));
+    else if(b.t==="gap")out.push(para([],{after:tw(1)}));
+  }
+  const doc=new D.Document({creator:"Career Services",title:tpl.title+" Resume Template",
+    styles:{default:{document:{run:{font,size:hp(lk.body),color:ink}}}},
+    numbering:{config:[{reference:"dots",levels:[{level:0,format:D.LevelFormat.BULLET,text:"•",alignment:D.AlignmentType.LEFT,
+      style:{paragraph:{indent:{left:280,hanging:200}}}}]}]},
+    sections:[{properties:{page:{size:{width:12240,height:15840},margin:{top:1080,bottom:1080,left:1080,right:1080}}},children:out}]});
+  return D.Packer.toBlob(doc);
+}
+async function saveFile(name,blob){if(downloads)await downloads.save({filename:name,data:blob});else plainSave(name,blob)}
+$("dlDocx").addEventListener("click",async()=>{
+  if(!window.docx)return;const b=$("dlDocx");b.disabled=true;$("status").textContent="Making your Google Docs file…";
+  const tpl=TEMPLATES[st.tpl],name=`${tpl.id}-Resume-${LOOKS[st.look].name}-${st.colorName}.docx`;
+  try{await saveFile(name,await buildDOCX());$("status").textContent=`Saved ${name}. Next, upload it to Google Drive (steps below).`}
+  catch(err){const c=err&&err.code;$("status").textContent=c==="declined"?"Download canceled.":c==="rate_limited"?"One moment, then try again.":"That download didn't work. Try again, or open this page in another browser."}
+  finally{b.disabled=false}
+});
+if(!window.docx){$("dlDocx").disabled=true;$("dlDocx").textContent="Google Docs file unavailable";}
 
 if(!window.jspdf){$("status").textContent="The PDF tool didn't load. Check your connection and reload the page.";$("dl").disabled=true}
 sync();

@@ -1,6 +1,6 @@
 # Student Resume Templates
 
-A one-page website where students build an ATS-friendly resume template, preview it live, and download it as a PDF. Made for Career Services.
+A one-page website where students build an ATS-friendly resume template, preview it live, and download it as a Google Docs-ready Word file or a PDF. Made for Career Services.
 
 **🔗 Live site: [drakeev.github.io/Free-Resume-Templates-and-Builder](https://drakeev.github.io/Free-Resume-Templates-and-Builder/)**
 
@@ -21,8 +21,12 @@ A one-page website where students build an ATS-friendly resume template, preview
 
 2. **Pick a look:** Traditional (serif, centered), Modern (sans-serif, left-aligned, color band) or Compact (tight, minimal).
 3. **Pick a color:** Navy, Crimson, Forest, Teal, Plum, Charcoal, or any custom color. The page warns students if a color is too light to read.
-4. **Download a PDF** that matches the live preview.
-5. **Edit it in Google Drive.** The page walks students through uploading the PDF to Drive (school account or personal Gmail), opening it with Google Docs, filling it in, and downloading a PDF to apply with. Saving in Drive is required.
+4. **Download** the template two ways:
+   - **For Google Docs (.docx):** the version students edit. Google Docs opens it with its lines, bullets, and right-aligned dates intact.
+   - **PDF:** a print-ready copy that matches the live preview.
+5. **Edit it in Google Drive.** The page walks students through uploading the .docx file to Drive (school account or personal Gmail), opening it with Google Docs, filling it in, and downloading a PDF to apply with. Saving in Drive is required.
+
+> **Why a .docx for editing?** Google Docs doesn't truly convert PDFs. It pulls out the text and drops anything drawn on the page, so a PDF opened in Docs loses its horizontal lines, bullets, and date alignment. A Word file opens in Docs as a real document, with its formatting kept.
 
 The page also has a QR code so students can open it on their phones, and a short "Before you send your resume" checklist.
 
@@ -32,7 +36,7 @@ Applicant tracking systems (ATS) read resumes as plain text. Every template and 
 
 - One column, with no tables, text boxes, icons, or photos
 - Standard section names (Experience, Education, Skills)
-- Standard fonts (Helvetica or Times) as real, selectable text
+- Standard fonts (Helvetica/Arial or Times) as real, selectable text
 - Color only on the name, headings, and lines, so the resume also prints well in black and white
 - Plain characters only (hyphens and vertical bars) so nothing turns into garbled symbols
 
@@ -40,7 +44,7 @@ Every template and look combination was generated and checked to make sure the t
 
 ## Privacy
 
-- Nothing a student does on the page is uploaded anywhere. PDFs are made inside the student's own browser.
+- Nothing a student does on the page is uploaded anywhere. The PDF and .docx files are made inside the student's own browser.
 - The page remembers each student's last template, look, and color on that device only (browser storage). No names, contact details, or resume content are stored.
 - There is no sign-in, no tracking, and no analytics.
 
@@ -48,7 +52,7 @@ Every template and look combination was generated and checked to make sure the t
 
 | File | What it is |
 |---|---|
-| `index.html` | The whole website in one file: page layout, styles, template content, and the PDF builder |
+| `index.html` | The whole website in one file: page layout, styles, template content, and the PDF and Word builders |
 | `docs/HOSTING.md` | How to put the site online (GitHub Pages or a school website) and update the QR code |
 | `docs/CUSTOMIZING.md` | How to change the school name, wording, colors, templates, and looks |
 | `docs/STUDENT-GUIDE.md` | A plain-language guide you can share with students |
@@ -62,7 +66,7 @@ Every template and look combination was generated and checked to make sure the t
 ## Requirements
 
 - Any modern browser (Chrome, Edge, Safari, Firefox) on a computer or phone
-- An internet connection (loads Google Fonts and the jsPDF library from cdnjs)
+- An internet connection (loads Google Fonts, the jsPDF library from cdnjs, and the docx library from jsDelivr)
 - No server, database, or build step
 
 ## AI disclosure
@@ -72,7 +76,7 @@ This project was built with the help of generative AI.
 - **Tool used:** Claude, an AI model made by Anthropic
 - **What the AI did:** wrote the website code, the PDF layout engine, the text of the five resume templates, the student instructions on the page, and this documentation
 - **What a person did:** a Career Services advisor described what students need, chose the colors, templates, and section order, requested changes, and reviewed the results
-- **How it was checked:** each template and look combination was generated as a PDF, checked to confirm it fits on one page, and checked to confirm its text reads cleanly in order (the way an ATS reads it)
+- **How it was checked:** each template and look combination was generated as both a PDF and a .docx file, checked to confirm it fits on one page, and checked to confirm its text reads cleanly in order (the way an ATS reads it)
 
 AI can make mistakes. If you find wording that is unclear or advice that does not fit your students or local employers, please edit it. [docs/CUSTOMIZING.md](docs/CUSTOMIZING.md) shows where everything lives.
 
@@ -81,6 +85,7 @@ Commits written by the AI are marked with a `Co-Authored-By: Claude` line in the
 ## Credits
 
 - [jsPDF](https://github.com/parallax/jsPDF) (MIT License) for building PDFs in the browser
+- [docx](https://github.com/dolanmiu/docx) (MIT License) for building Word files in the browser
 - [Archivo](https://fonts.google.com/specimen/Archivo) and [Source Sans 3](https://fonts.google.com/specimen/Source+Sans+3) from Google Fonts (SIL Open Font License)
 
 ## License

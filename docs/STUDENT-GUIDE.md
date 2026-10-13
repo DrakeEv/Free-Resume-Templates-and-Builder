@@ -11,21 +11,23 @@
    - **Skills-Based:** you're changing careers, or your jobs don't match the role you want
 3. **Choose a look:** Traditional, Modern, or Compact.
 4. **Choose a color.** Pick a darker color so your resume is easy to read.
-5. Click **Download PDF**.
+5. Click **Download for Google Docs (.docx)**. This is the file you'll edit.
+
+Want a quick printout instead? **Download PDF** gives you a print-ready copy, but don't use the PDF for editing. Google Docs drops its lines and bullets.
 
 ## 2. Save it in Google Drive (required)
 
 Use your school account or your personal Gmail. Tip: schools often close student accounts after graduation, so a personal Gmail keeps your resume safe longer.
 
 1. Go to **drive.google.com** and sign in.
-2. Click **New** > **File upload** and choose your PDF.
+2. Click **New** > **File upload** and choose your **.docx** file.
 3. Right-click the file and choose **Open with** > **Google Docs**.
 
 ## 3. Fill it in
 
 - Replace every **[bracketed]** placeholder with your own information.
 - Delete any sections you don't need.
-- Some lines or spacing may shift when Docs opens a PDF. Fix anything that moved.
+- Keep the lines, bullets, and dates as they are. They're part of the template.
 
 ## 4. Download a copy to apply with
 
